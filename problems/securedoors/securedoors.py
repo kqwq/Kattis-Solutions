@@ -1,16 +1,23 @@
+
+
 n = int(input())
-s = set()
+
+inside = set()
+
 for i in range(n):
-    l = input().split()
-    if l[0] == 'entry':
-        if l[1] in s:
-            print(f'{l[1]} entered (ANOMALY)')
-        else:
-            print(f'{l[1]} entered')
-            s.add(l[1])
+  t, name = map(str, input().split())
+
+  if t == "entry":
+    if name not in inside:
+      print(name, "entered")
+      inside.add(name)
     else:
-        if l[1] in s:
-            print(f'{l[1]} exited')
-            s.remove(l[1])
-        else:
-            print(f'{l[1]} exited (ANOMALY)')
+      print(name, "entered (ANOMALY)")
+  else:
+    if name in inside:
+      print(name, "exited")
+      inside.remove(name)
+    else:
+      print(name, "exited (ANOMALY)")
+
+

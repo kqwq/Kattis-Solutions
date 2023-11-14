@@ -1,8 +1,19 @@
-def length(n: int) -> int:
-    if n <= 2:
-        return n
-    if n == 3:
-        return 4
-    return length(n-1) + length(n-2) + length(n-3)
-    
-print(length(int(input())))
+
+
+'''
+1 - 1
+2 - 2
+3 - 4
+4 - 7 (ways to make 3 + ways to make 2 + ways to make 1)
+
+'''
+
+ways = [None,1,2,4,7]
+
+n = int(input())
+
+while n >= len(ways):
+  i = len(ways) - 1
+  su = ways[i] + ways[i-1] + ways[i-2]
+  ways.append(su)
+print(ways[n])

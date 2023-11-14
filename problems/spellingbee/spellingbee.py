@@ -1,17 +1,30 @@
-s = input()
+
+
+spellingBee = input()
+center = spellingBee[0]
+outer = spellingBee[1:]
+
+correctWords = []
+
 n = int(input())
-
-l = []
 for i in range(n):
-    x = input()
-    if len(x) >= 4 and s[0] in x:
-        found = True
-        for c in x:
-            if c not in s:
-                found = False
-        if found:
-            l.append(x)
-            
+  word = input()
 
-for vv in l:
-    print(vv)
+  #2
+  if len(word) < 4:
+    continue
+
+  #1
+  bad = False
+  for letter in word:
+    if letter not in spellingBee:
+      bad = True
+      break
+  if bad:
+    continue
+
+  #3
+  if center not in word:
+    continue
+
+  print(word)

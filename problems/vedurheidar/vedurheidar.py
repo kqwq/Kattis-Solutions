@@ -1,9 +1,12 @@
-wind_speed = int(input())
+v = int(input())
+
 n = int(input())
+
 for i in range(n):
-    s = input().split()
-    if int(s[1]) < wind_speed:
-        print(s[0], 'lokud')
-    else:
-        print(s[0], 'opin')
-        
+  city, c = input().split()
+  cur = int(c)
+  if v <= cur:
+    print(city, "opin")
+  else:
+    print(city, "lokud")
+

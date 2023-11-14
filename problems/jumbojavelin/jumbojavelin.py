@@ -1,5 +1,7 @@
 n = int(input())
-curr = int(input())
-for i in range(n-1):
-    curr = (int(input()) + curr) - 1
-print(curr)
+length = 0
+for i in range(n):
+    length += int(input())
+length -= n
+length += 1
+print(length)

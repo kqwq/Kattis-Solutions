@@ -1,10 +1,7 @@
-a = input()
-
-vowels = 'AEIOU'
-
-if a in vowels:
-    print('Jebb')
-elif a == 'Y':
-    print('Kannski')
+letter = input()
+if letter == "Y":
+  print("Kannski")
+elif letter in "AEIOU":
+  print("Jebb")
 else:
-    print('Neibb')
+  print('Neibb')

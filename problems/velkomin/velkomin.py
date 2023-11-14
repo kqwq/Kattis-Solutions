@@ -1,1 +1,1 @@
-print('VELKOMIN!')
+print("VELKOMIN!")

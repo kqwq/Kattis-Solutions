@@ -1,9 +1,8 @@
-a = input()
-b = input()
-
-differences = 0
+a=input()
+b=input()
+diff=0
 for i in range(4):
-    if a[i] != b[i]:
-        differences += 1
+  if a[i]!=b[i]:
+    diff+=1
 
-print(2 ** differences)
+print(2**diff)

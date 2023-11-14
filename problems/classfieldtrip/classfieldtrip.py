@@ -1,3 +1,5 @@
 a = input()
 b = input()
-print(''.join(sorted(a+b)))
+c = list(a + b)
+c.sort()
+print("".join(c))

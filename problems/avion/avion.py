@@ -1,11 +1,15 @@
-l = []
-for i in range(5):
-    s = input()
-    if 'FBI' in s:
-        l.append(i+1)
 
-if not l:
-    print('HE GOT AWAY!')
+lines = []
+for i in range(5):
+  lines.append(input())
+
+a = []
+for i in range(5):
+  if "FBI" in lines[i]:
+    a.append(i+1)
+
+if len(a) == 0:
+  print("HE GOT AWAY!")
 else:
-    print(*l)
-    
+  b = map(str, a)
+  print(" ".join(b))

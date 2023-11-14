@@ -1,5 +1,1 @@
-n = input()
-if n.startswith('555'):
-    print(1)
-else:
-    print(0)
+print(1 if input()[:3]=="555" else 0)

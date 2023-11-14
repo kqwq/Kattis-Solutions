@@ -1,12 +1,12 @@
-n = int(input())
 
-m = n+1
+x = int(input())
+y=sorted(list(str(x)))
 
-while True:
-    if sorted(str(n)) == sorted(str(m)):
-        print(m)
-        break
-    elif len(str(m)) > len(str(n)):
-        print(0)
-        break
-    m += 1
+
+while x < 1_000_000:
+  x += 1
+  if sorted(list(str(x))) == y:
+    print(x)
+    quit()
+    
+print(0)

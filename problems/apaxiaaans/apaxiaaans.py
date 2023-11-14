@@ -1,8 +1,10 @@
-n = input()
-s = ''
-last = ''
-for c in n:
-    if c != last:
-        s += c
-    last = c
-print(s)
+
+a = input()
+ss = ""
+lastChar = ""
+for i in range(len(a)):
+    char = a[i]
+    if char != lastChar:
+        ss += char
+    lastChar = char
+print(ss)

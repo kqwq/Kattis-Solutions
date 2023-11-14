@@ -1,1 +1,5 @@
-print('hiss'if input().count('ss') > 0 else 'no hiss')
+
+if "ss" in input():
+    print("hiss")
+else:
+    print("no hiss")

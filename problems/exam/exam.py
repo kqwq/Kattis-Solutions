@@ -1,13 +1,17 @@
-n = int(input())
-f = input()
-s = input()
+friend_correct=int(input())
+m=list(input())
+f=list(input())
+n=len(m)
+same=0
+for i in range(n):
+    if m[i] == f[i]:
+        same += 1
+diff = n - same
 
-su = 0
-for i in range(len(f)):
-    if f[i] == s[i]:
-        su += 1
-
-if su:
-    print(su + ((len(s) - su) - abs(su - n)))
-else:
-    print(len(s) - n)
+# Calculate max # you got right
+x = friend_correct + diff
+if x > n:
+    x = n - x
+if x < 0:
+    x += n
+print(x)

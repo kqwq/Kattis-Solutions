@@ -1,7 +1,7 @@
 n = int(input())
-l = []
-for i in range(n):
-    l.append(int(input()))
 
-for i in range(1, n+1):
-    print(l[-i])
+lines = []
+for i in range(n):
+  lines.append(input())
+for i in range(n-1, -1, -1):
+  print(lines[i])

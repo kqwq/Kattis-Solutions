@@ -1,2 +1,4 @@
-l=sorted(list(map(int,input().split())))
-print(l[0]*l[2])
+
+nums=list(map(int,input().split()))
+nums.sort()
+print(nums[0]*nums[2])

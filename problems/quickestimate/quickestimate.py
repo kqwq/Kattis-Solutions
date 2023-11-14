@@ -1,4 +1,7 @@
+
+
+
 n = int(input())
 
 for i in range(n):
-    print(len(input()))
+  print(len(str(input())))

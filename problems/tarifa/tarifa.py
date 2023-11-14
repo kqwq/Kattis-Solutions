@@ -1,8 +1,6 @@
-x = int(input())
-n = int(input())
-left = 0
+x=int(input())
+n=int(input())
+has = x
 for i in range(n):
-    p = int(input())
-    left += x - p
-
-print(left + x)
+    has += x - int(input())
+print(has)

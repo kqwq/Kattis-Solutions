@@ -1,4 +1,9 @@
-m = input().split('|')
-n = input().split('|')
 
-print(m[0] + n[0] + ' ' + m[1] + n[1])
+
+first = input()
+second = input()
+
+tl, tr = first.split("|")
+bl, br = second.split("|")
+
+print(tl+bl, tr+br)

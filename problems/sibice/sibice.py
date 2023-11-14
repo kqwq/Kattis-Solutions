@@ -1,11 +1,11 @@
 import math
 
-N, W, H = map(int, input().split())
-hyp = math.sqrt(W*W+H*H)
-for i in range(N):
+n, w, h = map(int, input().split())
+whMax = math.sqrt(w**2 + h**2)
+
+for i in range(n):
     x = int(input())
-    if x <= hyp:
-        print('DA')
+    if x > whMax:
+        print("NE")
     else:
-        print('NE')
-    
+        print("DA")

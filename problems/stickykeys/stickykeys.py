@@ -1,8 +1,13 @@
+
+
+
 s = input()
-last = ''
-ss = ''
+ss = ""
+
+lastC = ""
 for c in s:
-    if c != last:
-        ss += c
-    last = c
+  if c != lastC:
+    ss += c
+  lastC = c
+
 print(ss)

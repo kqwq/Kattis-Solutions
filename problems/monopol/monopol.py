@@ -1,10 +1,11 @@
+
 n = int(input())
 hotels = list(map(int, input().split()))
 
-possible = 36
+poss = 36
 
-ways = [0,0,1,2,3,4,5,6,5,4,3,2,1,0]
+ways = [None,None,1,2,3,4,5,6,5,4,3,2,1,None]
 
 for hot in hotels:
-  possible -= ways[hot]
-print(1-possible/36)
+  poss -= ways[hot]
+print(1-poss/36)

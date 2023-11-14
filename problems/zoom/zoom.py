@@ -1,14 +1,12 @@
+
+
+
 n, k = map(int, input().split())
 
-j = 1
-l = list(map(int, input().split()))
-result = []
+nums = input().split()
 
-for i, v in enumerate(l):
-    if j == k:
-        result.append(v)
-        j = 1
-    else:
-        j += 1
-print(*result)
-    
+nn = []
+for i in range(k-1, n, k):
+  nn.append(nums[i])
+
+print(" ".join(nn))

@@ -1,10 +1,8 @@
-n, x = map(int, input().split())
-
-s = 0
-for i in range(n):
-    s += int(input())
-
-if s > x:
-    print('Neibb')
+classrooms, inv = map(int,input().split())
+needs = 0
+for i in range(classrooms):
+    needs += int(input())
+if inv >= needs:
+    print("Jebb")
 else:
-    print('Jebb')
+    print("Neibb")

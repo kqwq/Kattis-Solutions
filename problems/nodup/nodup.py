@@ -1,5 +1,8 @@
-words = input().split()
-if len(words) == len(set(words)):
-    print('yes')
-else:
-    print('no')
+s = input().split(" ")
+words = set()
+for w in s:
+    if w in words:
+        print("no")
+        quit()
+    words.add(w)
+print("yes")

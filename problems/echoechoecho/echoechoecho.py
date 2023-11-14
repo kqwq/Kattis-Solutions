@@ -1,2 +1,1 @@
-s = input()
-print(f'{s} {s} {s}')
+print(((input()+" ")*3).strip())

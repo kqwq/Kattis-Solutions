@@ -1,9 +1,12 @@
-h, m = map(int, input().split())
 
-if m >= 45:
-    print(h, m-45)
-else:
-    if h == 0:
-        print(23, 60-(45-m))
-    else:
-        print(h-1, 60-(45-m))
+
+
+
+h,m = map(int,input().split())
+mm = h * 60 + m
+
+mm -= 45
+if mm < 0:
+  mm += 24 * 60
+
+print(mm // 60, mm % 60)

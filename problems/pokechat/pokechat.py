@@ -1,10 +1,7 @@
-a = input()
-n = input()
-
-it = len(n) // 3
-s = ''
-for i in range(it):
-    i = i*3
-    g = n[i:i+3]
-    s += a[int(g)-1]
-print(s)
+alphabet = input()
+code = input()
+out = ""
+for i in range(0, len(code), 3):
+    key = int(code[i:i+3])-1
+    out += alphabet[key]
+print(out)

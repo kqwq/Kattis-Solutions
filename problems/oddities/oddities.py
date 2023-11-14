@@ -1,8 +1,7 @@
 n = int(input())
-
 for i in range(n):
     x = int(input())
-    if x % 2:
-        print(x, 'is odd')
+    if x % 2 > 0:
+        print(x, "is odd")
     else:
-        print(x, 'is even')
+        print(x, "is even")

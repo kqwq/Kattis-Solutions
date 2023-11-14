@@ -1,13 +1,16 @@
-while True:
-    sweet, sour = map(int, input().split())
-    if sweet == 0 and sour == 0:
-        break
-    
-    if sour + sweet == 13:
-        print('Never speak again.')
-    elif sour > sweet:
-        print('Left beehind.')
-    elif sour < sweet:
-        print('To the convention.')
-    else:
-        print('Undecided.')
+
+
+while 1:
+
+  a, b = map(int, input().split())
+  if not a and not b:
+    break
+
+  if a + b == 13:
+    print("Never speak again.")
+  elif b > a:
+    print("Left beehind.")
+  elif a > b:
+    print("To the convention.")
+  else:
+    print("Undecided.")

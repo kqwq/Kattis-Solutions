@@ -1,7 +1,6 @@
-n = int(input())
-t = 0
+n=int(input())
+sum=0
 for i in range(n):
-    a, b = map(float, input().split(' '))
-    t += a * b
-
-print(t)
+    a,b=map(float,input().split())
+    sum+=a*b
+print(sum)

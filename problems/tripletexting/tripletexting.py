@@ -1,11 +1,17 @@
-from collections import defaultdict
-d = defaultdict(int)
-s = input()
-
-skip = len(s) // 3
-
-for i in range(3):
-    d[s[i*skip:(skip*(i+1))]] += 1
 
 
-print(max(d, key=d.get))
+t = input()
+l = len(t) // 3
+
+a = t[0:l]
+b = t[l:l*2]
+c = t[l*2:]
+
+o = ""
+for i in range(l):
+  options = [a[i], b[i], c[i]]
+  options.sort()
+
+  o += options[1]
+
+print(o)

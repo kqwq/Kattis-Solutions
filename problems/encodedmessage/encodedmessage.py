@@ -1,10 +1,15 @@
-import math
+
 n = int(input())
 for i in range(n):
-    s = input()
-    arr_length = int(math.sqrt(len(s)))
-    l = []
-    for x in range(arr_length):
-        for j in range(1, arr_length+1):
-            l.append(s[(j*arr_length)-x-1])
-    print(''.join(l))
+  message = input()
+  messageLen = len(message)
+  messageRows = int(messageLen ** 0.5)
+  decoded = ""
+  for y in range(messageRows):
+    for x in range(messageRows):
+      xRot =  messageRows - y - 1
+      yRot = x
+
+      index = yRot * messageRows + xRot
+      decoded += message[index]
+  print(decoded)

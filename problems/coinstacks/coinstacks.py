@@ -1,35 +1,39 @@
-n = int(input())
 
-a = list(map(int, input().split()))
+n = int(input())
+stacks = list(map(int, input().split()))
+stacksLeft = stacks[:]
+
+# Quickly determine if it's possible
+total = sum(stacks)
+if total % 2 == 1:
+  print("no")
+  quit()
+
+
+
+# 2 pointer solution
+# p1 and p2 are the highest and 2nd highest values, not neccessarily in that order
+pointers = []
 steps = []
 
-while True:
-    maxx, maxx_index = 0, -1
-    minn, minn_index = 9999, -1
+while total > 0:
+  a = min(x for x in stacks if x)
+  ai = stacks.index(a)
+  b = max(x for x in stacks if x)
+  bi = n - 1 - stacks[::-1].index(b)
 
-    for i in range(len(a)):
-        if a[i] == 0:
-            continue
-        if a[i] > maxx:
-            if maxx != 0 and maxx < minn:
-                minn = maxx
-                minn_index = maxx_index
-            maxx = a[i]
-            maxx_index = i
-        elif a[i] < minn:
-            minn = a[i]
-            minn_index = i
-    
-    if maxx == 0 and minn == 9999:
-        print('yes')
-        for step in steps:
-            print(step)
-        break
-    elif maxx == 0 or minn == 9999:
-        print('no')
-        break
+  if ai == bi:
+    print("no")
+    quit()
+  steps.append([ai+1, bi+1])
+  stacks[ai] -= 1
+  stacks[bi] -= 1
+  if stacks[ai] == 0:
+    stacks[ai] = None
+  if stacks[bi] == 0:
+    stacks[bi] = None
+  total -= 2
 
-    steps.append(str(maxx_index+1) + ' ' +  str(minn_index+1))
-
-    a[minn_index] -= 1
-    a[maxx_index] -= 1
+print("yes")
+for step in steps:
+  print(step[0], step[1])

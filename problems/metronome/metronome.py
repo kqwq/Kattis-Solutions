@@ -1,1 +1,3 @@
-print(int(input()) / 4)
+turns = int(input())
+ticks = turns / 4
+print(ticks)

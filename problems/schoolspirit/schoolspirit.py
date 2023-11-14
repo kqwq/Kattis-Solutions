@@ -1,25 +1,23 @@
+
+
 n = int(input())
-
-
-def calc_score(l) -> float:
-    group_score = 0
-    for i, v in enumerate(l):
-        group_score += v*((4/5)**i)
-    return group_score * (1/5)
-
-l = []
-group_score = 0
+s = []
 for i in range(n):
-    v = int(input())
-    group_score += v*((4/5)**i)
-    l.append(v)
+  s.append(int(input()))
 
-group_score *= 1/5
+scoreNow = 0
+for i, ss in enumerate(s):
+  scoreNow += ss * (4/5) ** i
+scoreNow /= 5
 
-avg = 0
-for i in range(len(l)):
-    # we need the list without the ith element
-    avg += calc_score(l[:i] + l[i+1:])
+sl = []
+for i in range(n):
+  scoreLater = 0
+  sCopy = s[:]
+  sCopy.pop(i)
+  for j, ss in enumerate(sCopy):
+    scoreLater += ss * (4/5) ** j
+  sl.append(scoreLater / 5)
 
-print(group_score)
-print(avg / n)
+print(scoreNow)
+print(sum(sl) / len(sl))

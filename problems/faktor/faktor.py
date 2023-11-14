@@ -1,3 +1,7 @@
-a, i = map(int, input().split())
+a,i=map(int,input().split())
 
-print((a * i) - (a-1))
+# (875) / 38 = 24
+
+print((i-1)*a+1)
+
+# (24-1)*38+1

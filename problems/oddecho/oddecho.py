@@ -1,11 +1,5 @@
-n = int(input())
-l = []
-for i in range(1, n+1):
-    if i % 2:
-        l.append(input())
-    else:
-        input()
-
-for j in l:
-    print(j)
-        
+n=int(input())
+for i in range(n):
+    inp = input()
+    if i % 2 == 0:
+        print(inp)

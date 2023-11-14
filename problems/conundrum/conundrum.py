@@ -1,7 +1,9 @@
-s = 'PER'
-inp = input()
-days = 0
-for i, c in enumerate(inp):
-    if s[i%3] != c:
-        days += 1
-print(days)
+
+
+p = "PER"
+s = input()
+diff = 0
+
+for i in range(len(s)):
+  if s[i] != p[i % 3]: diff += 1
+print(diff)

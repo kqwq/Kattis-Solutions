@@ -4,9 +4,8 @@ lines = []
 for i in range(n):
     row = input().split()
     j = 0
-    for c in row:
-        if int(c) > 0:
-            lines.append([i+1, j+1, c])
+    for cell in row:
+        if int(cell) > 0: lines.append([i+1, j+1, cell])
         j += 1
 
 print(len(lines))

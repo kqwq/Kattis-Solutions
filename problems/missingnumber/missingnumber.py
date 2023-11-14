@@ -1,21 +1,13 @@
-
-n = int(input())
+input()
 s = input()
-size = 1
-index = 0
-found = False
-for i in range(1, n):
-    if i == 10:
-        size = 2
-    elif i == 100:
-        size = 3
-    
-    num = int(s[index:index+size])
-    if i != num:
+i=1
+c=0
+while c<len(s):
+    iStr = str(i)
+    iLen = len(iStr)
+    if s[c:c+iLen]!=iStr:
         print(i)
-        found = True
-        break
-    index += size
-
-if not found:
-    print(i+1)
+        quit()
+    c+=iLen
+    i+=1
+print(i)

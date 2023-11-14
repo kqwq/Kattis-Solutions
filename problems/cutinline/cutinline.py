@@ -1,21 +1,24 @@
 n = int(input())
 
-l = []
+names = []
 for i in range(n):
-    l.append(input())
+  names.append(input())
 
-instructions = int(input())
+c = int(input())
+for i in range(c):
+  line = input()
+  if line.count(" ") == 1:
+    line += " _"
+  action, a, b = line.split()
+  if action == "cut":
+    if a in names:
+      names.remove(a)
+    for (j, name) in enumerate(names):
+      if b == name:
+        names.insert(j, a)
+        break
+  elif action == "leave":
+    names.remove(a)
 
-for i in range(instructions):
-    inp = input().split()
-    if inp[0] == 'cut':
-        a, b = inp[1], inp[2]
-        ind = l.index(b)
-        l.insert(ind, a)
-    elif inp[0] == 'leave':
-        a = inp[1]
-        l.remove(a)
-
-for c in l:
-    print(c)
-        
+for name in names:
+  print(name)

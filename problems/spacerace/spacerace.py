@@ -1,16 +1,26 @@
+
+# rate of fuel = fuel consumed / time taken
+# efficiency = velocity / rate of fuel
 n = int(input())
 d = float(input())
-winner = ''
-eff = 0
+
+bestI = ""
+bestE = -1
 for i in range(n):
-    j = input().split()
-    name = j[0]
-    v = float(j[1])
-    r = float(j[2])
-    t = d / v
-    rate = r / t
-    e = v / rate
-    if e > eff:
-        eff = e
-        winner = name
-print(winner)
+  initials, _v, _r = input().split()
+  v = float(_v) # velocity of ship
+  r = float(_r) # fuel consumed 
+
+  timeTaken = d / v
+
+  rateOfFuel = r / timeTaken
+  efficiency = v / rateOfFuel
+  if efficiency > bestE:
+    bestE = efficiency
+    bestI = initials
+
+print(bestI)
+
+
+
+

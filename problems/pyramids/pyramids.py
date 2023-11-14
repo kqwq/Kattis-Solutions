@@ -1,10 +1,11 @@
+
+
+
 n = int(input())
 
-line = 1
-i = 0
-while n >= line * line:
-    n -= line * line
-    i += 1
-    line += 2
 
-print(i)
+for i in range(0, 10_000):
+  n -= (i*2+1) ** 2
+  if n < 0:
+    print(i)
+    break

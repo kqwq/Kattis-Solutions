@@ -1,8 +1,9 @@
+
+
 n = int(input())
+
 for i in range(n):
-    l = input()
-    s = 'Simon says '
-    if l.startswith(s):
-        o = l[len(s):]
-        print(o)
-        
+  cmd = input()
+  if "Simon says" in cmd:
+    cmd = cmd.replace("Simon says ", "")
+    print(cmd)

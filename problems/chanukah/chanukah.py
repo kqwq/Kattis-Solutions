@@ -1,5 +1,7 @@
-p = int(input())
+n=int(input())
 
-for i in range(p):
-    a, b = map(int, input().split())
-    print(a, ((b * (b+1)) // 2) + b)
+for i in range(n):
+    _, days = map(int, input().split())
+    x = days + 1
+    candles = x * (x + 1) / 2
+    print(i+1, int(candles-1))

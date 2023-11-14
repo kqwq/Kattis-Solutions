@@ -1,3 +1,3 @@
-n = input()
-a = n.index('a')
-print(n[a:])
+s = input()
+ind = s.find("a")
+print(s[ind:])

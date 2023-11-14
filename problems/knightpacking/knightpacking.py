@@ -1,4 +1,5 @@
-if int(input()) % 2:
-    print('first')
+n = int(input())
+if n % 2 == 0:
+    print("second")
 else:
-    print('second')
+    print("first")

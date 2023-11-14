@@ -1,3 +1,3 @@
-h = input()
-c = h.count('e') * 2
-print('h' + 'e'*c + 'y')
+text = input()
+numOfEs = len(text) - 2
+print("h" + "e" * numOfEs * 2 + "y")

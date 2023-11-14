@@ -1,12 +1,14 @@
+
+
+def isHarshad(n):
+    digits = map(int, str(n))
+    sumDigits = sum(digits)
+    return n % sumDigits == 0
+
+
 n = int(input())
-m = n
-while True:
-    h = str(m)
-    s = 0
-    for c in h:
-        s += int(c)
-    
-    if m % s == 0:
-        print(m)
-        break
-    m += 1
+while 1:
+    if isHarshad(n):
+        print(n)
+        quit()
+    n += 1

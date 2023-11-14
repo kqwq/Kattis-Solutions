@@ -1,18 +1,19 @@
-s = input()
-k = input()
-
-d = 10
-
-while len(s) > 0 and d > 0:
-    if k[0] in s:
-        s = s.replace(k[0], '')
-    else:
-        d -= 1
-    
-    k = k[1:]
 
 
-if d == 0:
-    print('LOSE')
+word = input()
+letters = set(word)
+seq = input()
+
+correct = 0
+i =0
+while i < 10 + correct:
+  guess = seq[i % len(seq)]
+  if guess in letters:
+    correct += 1
+    letters.remove(guess)
+  i += 1
+
+if len(letters) == 0:
+  print("WIN")
 else:
-    print('WIN')
+  print('LOSE')

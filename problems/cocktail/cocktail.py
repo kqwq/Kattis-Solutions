@@ -1,15 +1,15 @@
-n, t = map(int, input().split())
-l = []
-for i in range(n):
-    l.append(int(input()))
 
-l.sort(reverse=True)
-new = []
+
+n, t = map(int, input().split())
+
+durations = []
 for i in range(n):
-    for j in range(len(new)):
-        new[j] -= t
-    if 0 in new:
-        print('NO')
-        exit()
-    new.append(l.pop(0))
-print('YES')
+  durations.append(int(input()))
+
+durations.sort()
+
+for (i, d) in enumerate(durations):
+  if d <= (i) * t:
+    print("NO")
+    quit()
+print("YES")

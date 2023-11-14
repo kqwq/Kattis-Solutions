@@ -1,13 +1,13 @@
-n = input()
 
-lines = [['' for _ in range(4)] for _ in range(4)]
-for i, c in enumerate(n):
-    b = str(bin(int(c))[2:])
-    b = ('0' * (4 - len(b))) + b
 
-    for j in range(3, -1, -1):
-        lines[j][i] = '*' if b[j] == '1' else '.'
-    
+seq = []
+line = input()
+for char in line:
+  a = "000"+bin(int(char))[2:]
+  a = a.replace("0", ".").replace("1", "*")
+  seq.append(a)
 
-for line in lines:
-    print(f'{line[0]} {line[1]}   {line[2]} {line[3]}')
+
+for i in range(4):
+  pos = -4+i
+  print(seq[0][pos], seq[1][pos], " ", seq[2][pos], seq[3][pos])

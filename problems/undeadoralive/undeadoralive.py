@@ -1,12 +1,10 @@
-l = input()
-smile = l.count(':)')
-sad = l.count(':(')
-
-if smile and not sad:
-    print('alive')
-elif sad and not smile:
-    print('undead')
-elif sad and smile:
-    print('double agent')
+s = input()
+if ":)" in s:
+    if ":(" in s:
+        print("double agent")
+    else:
+        print("alive")
+elif ":(" in s:
+    print("undead")
 else:
     print('machine')

@@ -1,17 +1,28 @@
+
+def yearFromDate(date):
+  return int(date.split("/")[0])
+
 n = int(input())
 for i in range(n):
-    name, studies_start, birthday, courses = input().split()
+  name, uDay, bDay, courses = input().split()
 
-    courses = int(courses)
-    studies_start = studies_start.split('/')
-    birthday = birthday.split('/')
+  isEli = None
 
-    if int(studies_start[0]) >= 2010:
-        print(name, 'eligible')
-    elif int(birthday[0]) >= 1991:
-        print(name, 'eligible')
-    elif courses >= 41:
-        print(name, 'ineligible')
-    else:
-        print(name, 'coach petitions')
-    
+  if yearFromDate(uDay) >= 2010:
+    isEli = True
+  elif yearFromDate(bDay) >= 1991:
+    isEli = True
+  elif int(courses) > 40:
+    isEli = False
+
+
+
+
+  if isEli == True:
+    print(name, "eligible")
+
+  if isEli == False:
+    print(name, "ineligible")
+
+  if isEli == None:
+    print(name, "coach petitions")

@@ -1,5 +1,8 @@
-s = set()
+
+
+seen = set()
 
 for i in range(10):
-    s.add(int(input()) % 42)
-print(len(s))
+    seen.add(int(input()) % 42)
+
+print(len(seen))

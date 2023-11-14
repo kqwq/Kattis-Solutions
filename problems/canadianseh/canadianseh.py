@@ -1,5 +1,7 @@
-l = input()
-if 'eh?' == l[-3:]:
-    print('Canadian!')
+
+
+s = input()
+if s.endswith("eh?"):
+  print("Canadian!")
 else:
-    print('Imposter!')
+  print("Imposter!")

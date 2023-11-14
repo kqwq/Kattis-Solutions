@@ -1,9 +1,7 @@
-cost = float(input())
-lawns = int(input())
-
-s = 0.0
-for i in range(lawns):
-    w, l = map(float, input().split())
-    s += cost * w * l
-print(s)
-    
+c=float(input())
+n=int(input())
+sum=0
+for i in range(n):
+    w,l=map(float,input().split())
+    sum+=w*l*c
+print(sum)

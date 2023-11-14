@@ -1,5 +1,5 @@
-n = int(input())
-if n % 2:
-    print('Alice')
+turn = int(input())
+if turn % 2 == 0:
+    print("Bob")
 else:
-    print('Bob')
+    print("Alice")

@@ -1,6 +1,4 @@
-n = int(input())
-
-x = list(map(int, input().split()))
-y = list(map(int, input().split()))
-
-print(sum(set(x).difference(y)))
+input()
+sum1=sum(map(int,input().split()))
+sum2=sum(map(int,input().split()))
+print(sum1-sum2)

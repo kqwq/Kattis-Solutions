@@ -1,3 +1,6 @@
-a = int(input())
-b = int(input())
-print(a%b)
+
+
+n = int(input())
+m = int(input())
+
+print(n % m)

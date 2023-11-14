@@ -1,9 +1,13 @@
-n, k, d = map(int, input().split())
 
-f = 0
-for i in range(1, n+1):
-    x = int(input())
-    if 14-((d-x) + k) <= 0:
-        f += 1
-        
-print(f)
+
+n, k, d = map(int, input().split())
+q = []
+for i in range(n):
+    q.append(int(input()))
+
+makeIt = 0
+for qq in q:
+    if qq + 14 <= k + d:
+        makeIt += 1
+
+print(makeIt)

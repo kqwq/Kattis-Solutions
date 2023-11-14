@@ -1,2 +1,4 @@
-n = int(input())
-print(sum(list(map(int, input().split()))) // n)
+input()
+m = list(map(int, input().split()))
+
+print(int(sum(m) / len(m)))

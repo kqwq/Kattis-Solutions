@@ -1,5 +1,6 @@
 n, p, x, y = map(int, input().split())
-if n > p:
-    print(p*x)
-else:
-    print(str((int(p / (n - 1)) * y) + (p * x)))
+
+meowthRead = p // (n-1)
+
+time = p * x + meowthRead * y
+print(time)

@@ -1,7 +1,3 @@
-l = input()
-j = input()
-
-if l.count('a') >= j.count('a') and l.count('h') >= j.count('h'):
-    print('go')
-else:
-    print('no')
+a=input().count('a')
+b=input().count('a')
+print("go" if b <= a else "no")

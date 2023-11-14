@@ -1,12 +1,11 @@
-l = [1, 2, 3]
+pos = 1
+
 s = input()
-
 for c in s:
-    if c == 'A':
-        l[0], l[1] = l[1], l[0]
-    elif c == 'B':
-        l[1], l[2] = l[2], l[1]
-    elif c == 'C':
-        l[0], l[2] = l[2], l[0]
-
-print(l.index(1) + 1)
+    if c == "A" and pos != 3:
+        pos = 3 - pos
+    elif c == "B" and pos != 1:
+        pos = 5 - pos
+    elif c == "C" and pos != 2:
+        pos = 4 - pos
+print(pos)

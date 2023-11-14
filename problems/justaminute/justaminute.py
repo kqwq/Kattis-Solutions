@@ -1,15 +1,17 @@
+
+
 n = int(input())
 
-
-sum_min = 0
-sum_sec = 0
+mm = 0
+ss = 0
 for i in range(n):
-    m, s = map(int, input().split())
-    sum_min += m
-    sum_sec += s
+  m, s = map(int, input().split())
+  mm += m
+  ss += s
 
-m = sum_sec / 60 / sum_min
-if m > 1:
-    print(m)
+slMinute = ss / mm / 60
+if slMinute <= 1:
+  print("measurement error")
 else:
-    print("measurement error")
+  print(slMinute)
+

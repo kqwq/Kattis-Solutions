@@ -1,29 +1,13 @@
-m = {1: 31, 2: 28, 3: 31, 
-     4: 30, 5: 31, 6: 30,
-      7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31 }
 
+d, m = map(int, input().split())
 
-week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+words = list(map(lambda x:x+"day", ["Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur", "Sun"]))
+months = [31,28,31,30,31,30,31,31,30,31,30,31]
 
-day, month = map(int, input().split())
+onM = 1
+while onM < m:
+  d += months[onM-1]
 
-d = 3
-s = 0
+  onM += 1
 
-for j in range(1, month):
-    if j == month:
-        break
-
-    s += m[j]
-
-s = day + s
-
-for i in range(1, 366):
-    if d == 7:
-        d = 0
-    
-    if i == s:
-        print(week[d])
-        break
-
-    d += 1
+print(words[(d+2) % 7])

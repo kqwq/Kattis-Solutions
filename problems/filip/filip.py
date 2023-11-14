@@ -1,8 +1,11 @@
-a, b = input().split()
-a = int(a[::-1])
-b = int(b[::-1])
 
+a,b = map(list, input().split())
+
+a.reverse()
+b.reverse()
+a=int(''.join(a))
+b=int(''.join(b))
 if a > b:
-    print(a)
+  print(a)
 else:
-    print(b)
+  print(b)

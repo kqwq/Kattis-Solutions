@@ -30,3 +30,4 @@ for color in colors:
     print("NO")
     quit()
 print('YES')
+

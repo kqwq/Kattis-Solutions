@@ -1,16 +1,20 @@
 import sys
 
-d = {};space = False
+dMode = True
+d = {}
 for line in sys.stdin:
-    line = line.strip()
-    if line.strip() == '':
-        space = True
-        continue
-    if not space:
-        m = line.split()
-        d[m[1]] = m[0]
+  line = line.strip()
+  if dMode:
+    parts = line.split()
+    if len(parts) == 0:
+      dMode = False
+      continue
+
+    english, babelfish = parts
+    d[babelfish] = english
+
+  else:
+    if line in d:
+      print(d[line])
     else:
-        if line in d:
-            print(d[line])
-        else:
-            print('eh')
+      print("eh")

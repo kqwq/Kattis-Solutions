@@ -1,24 +1,14 @@
-from collections import defaultdict
+
 
 s = input()
 
-d = defaultdict(int)
+t = 0
+g = 0
+c = 0
+for r in s:
+  if r == "T":t+=1
+  if r == "G":g+=1
+  if r == "C":c+=1
 
-for c in s:
-    d[c] += 1
-
-points = 0
-tablet = 0
-compass = 0
-gear = 0
-for k, v in sorted(d.items()):
-    if k == 'T':
-        tablet += v
-    elif k == 'C':
-        compass += v
-    else:
-        gear += v
-
-points += min(tablet, compass, gear) * 7
-points += tablet**2 + compass**2 + gear**2
-print(points)
+m = min(t, g, c)
+print(m * 7 + t ** 2 + g ** 2 + c ** 2)

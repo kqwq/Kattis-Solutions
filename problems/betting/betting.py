@@ -1,5 +1,3 @@
-n = int(input())
-other = 100 - n
-
-print(1 / (n / 100))
-print(1 / (other / 100))
+p=int(input())/100
+print(1/p)
+print(1/(1-p))

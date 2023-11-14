@@ -1,9 +1,8 @@
-testcases = int(input())
-
-for i in range(testcases):
-    n = int(input())
+n=int(input())
+for i in range(n):
+    nn=int(input())
     cities = set()
-    for j in range(n):
+    for j in range(nn):
         cities.add(input())
     print(len(cities))
         

@@ -1,16 +1,15 @@
+
+pos = []
+smiles = [":)", ";)", ":-)", ";-)"]
 s = input()
 
-looking = False
-last = -1
-for i, c in enumerate(s):
-    if c == ':' or c == ';':
-        looking = True
-        last = i
-    elif looking:
-        if c == '-':
-            continue
-        elif c == ')':
-            print(last)
-            looking = False
-        else:
-            looking = False
+for smile in smiles:
+    sLen = len(smile)
+    for i in range(len(s) - sLen + 1):
+        sub = s[i:i+sLen]
+        if sub == smile:
+            pos.append(i)
+
+pos.sort()
+for p in pos:
+    print(p)

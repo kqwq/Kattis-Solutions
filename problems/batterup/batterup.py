@@ -1,5 +1,4 @@
-n = int(input())
-
-l = [int(x) for x in input().split() if x != '-1']
-
-print(sum(l) / len(l))
+input()
+bats = map(int, input().split())
+bats = list(filter(lambda x:x>=0, bats))
+print(sum(bats)/len(bats))

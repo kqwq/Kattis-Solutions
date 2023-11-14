@@ -1,5 +1,5 @@
-n = input()
-if 'COV' in n:
-    print('Veikur!')
+dna = input()
+if dna.find("COV") != -1:
+    print("Veikur!")
 else:
-    print('Ekki veikur!')
+    print("Ekki veikur!")

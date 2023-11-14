@@ -1,68 +1,81 @@
-def rotate_x(dice: list) -> list:
-    dice[0], dice[5], dice[1], dice[4] = dice[5], dice[1], dice[4], dice[0]
-    return dice
+def getDiceId(die: list):
+    # Rotate die to numbers are as close to 6 5 4 3 2 1 as possible
+    # Prioritize big numbers near the beginning
 
-def rotate_y(dice: list) -> list:
-    dice[0], dice[2], dice[1], dice[3] = dice[2], dice[1], dice[3], dice[0]
-    return dice
+    # If they are all the same
+    if die.count(die[0]) == 6:
+        return str(die[0])*6
 
-def rotate_z(dice: list) -> list:
-    dice[2], dice[5], dice[3], dice[4] = dice[5], dice[3], dice[4], dice[2]
-    return dice
+    # Score the 3 face pairs and determine if we need to rotate clockwise or anti-clockwise
+    pair1 = die[0:2]
+    pair2 = die[2:4]
+    pair3 = die[4:6]
+    score1 = max(pair1) * 6 + min(pair1)
+    score2 = max(pair2) * 6 + min(pair2)
+    score3 = max(pair3) * 6 + min(pair3) 
 
-def generate_all_rotations(dice: list) -> list:
-    """
-    Generate all possible rotations of the dice.
-    """
-    rotations = [dice]
-    for _ in range(3):
-        dice = rotate_x(dice)
-        for _ in range(2):
-            dice = rotate_y(dice)
-            for _ in range(4):
-                dice = rotate_z(dice)
-                rotations.append(dice.copy())
-    return rotations
+    # If 2 sides are dominant, make them cancel out
+    if score1 == score2:
+        score1 = 0
+        score2 = 0
+    elif score1 == score3:
+        score1 = 0
+        score3 = 0
+    elif score2 == score3:
+        score2 = 0
+        score3 = 0
 
-def check(dice1: list, dice2: list) -> bool:
-    """
-    Check if two dice are equivalent, considering all possible rotations.
-    """
-    rotations_dice1 = generate_all_rotations(dice1)
-    return dice2 in rotations_dice1
+    if score2 > score1 and score2 > score3:
+        # Rotate clockwise (shift down 2)
+        die = die[2:6] + [ die[0], die[1]]
+    elif score3 > score1 and score3 > score2:
+        # Rotate anti-clockwise (shift up 2)
+        die = [die[4], die[5]] + die[0:4]
 
-# We want to group lists that have the same elements so we use a hash
-def hash(dice: list) -> int:
-    s = 0
-    for i in range(6):
-        s += dice[i] * 10**i
-    return s
+   # Now that the dominate side is in the first 2 indexes, make higher side on top
+    if die[0] < die[1]:
+        die = [die[1], die[0],  die[5], die[4], die[3], die[2]]
 
-# Number of dice
+    # Now that the dominate side is at the top, rotate until we get the "best" orientation
+    bestScore = -1
+    bestLast4 = None
+    last4 = die[2:6]
+    for i in range(0, 4):
+        last4 = [last4[3], last4[2], last4[0], last4[1]]
+        score = last4[0] * 6**3 +\
+            last4[1] * 6**2 +\
+            last4[2] * 6**1 +\
+            last4[3] * 6**0
+        if score > bestScore:
+            bestLast4 = last4
+            bestScore = score
+
+    # If the top and bottom sides are the same, flip it for good measure
+    if die[0] == die[1]:
+        die = [die[1], die[0],  die[5], die[4], die[3], die[2]]  
+    last4 = die[2:6]
+    for i2 in range(0, 4):
+        last4 = [last4[3], last4[2], last4[0], last4[1]]
+        score = last4[0] * 6**3 +\
+            last4[1] * 6**2 +\
+            last4[2] * 6**1 +\
+            last4[3] * 6**0
+        if score > bestScore:
+            bestLast4 = last4
+            bestScore = score  
+        
+    die = die[0:2] + bestLast4
+
+    return "".join(map(str, die))
+
 n = int(input())
-
-dice_list = {}
-
-for _ in range(n):
+hash = {}
+for i in range(n):
     die = list(map(int, input().split()))
-    found = False
-    for _ in range(3):
-        die = rotate_x(die)
-        for _ in range(3):
-            die = rotate_y(die)
-            for _ in range(4):
-                die = rotate_z(die)
-                h = hash(die)
-                if h in dice_list:
-                    dice_list[h] = dice_list[h] + 1
-                    found = True
-                    break
-            if found:
-                break
-        if found:
-            break
-    if not found:
-        h = hash(die)
-        dice_list[h] = 1
+    did = getDiceId(die) # Turn distict dice into unique IDs
+    if did in hash:
+        hash[did] += 1
+    else:
+        hash[did] = 1
 
-print(max(dice_list.values()))
+print(max(hash.values()))

@@ -1,5 +1,3 @@
-l = input().split('-')
-s = ''
-for j in l:
-    s += j[0]
-print(s)
+s = input()
+a = "".join(list(map(lambda a:a[0], s.split("-"))))
+print(a)
